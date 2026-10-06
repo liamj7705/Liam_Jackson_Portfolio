@@ -1,0 +1,33 @@
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.navigation a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.navigation a:hover {
+  color: var(--accent);
+}
+
+.navigation a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .navigation {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
