@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+import LiamLogo from "../assets/LiamLogo.png";
 
 const links = [
     { to: "/", label: "Home" },
@@ -13,16 +14,22 @@ const links = [
 function Navbar() {
     return (
         <header>
-            <nav className="navigation">
-                {links.map((link) => (
-                    <NavLink
-                        key={link.to}
-                        to={link.to}
-                        className={({ isActive }) => (isActive ? "active" : "")}
-                    >
-                        {link.label}
-                    </NavLink>
-                ))}
+            <nav className="navigation" aria-label="Main navigation">
+                <NavLink to="/" className="logo-link" aria-label="Go to home page">
+                    <img src={LiamLogo} alt="Liam Jackson" className="logo-img" />
+                </NavLink>
+
+                <div className="nav-links">
+                    {links.map((link) => (
+                        <NavLink
+                            key={link.to}
+                            to={link.to}
+                            className={({ isActive }) => (isActive ? "active" : "")}
+                        >
+                            {link.label}
+                        </NavLink>
+                    ))}
+                </div>
             </nav>
         </header>
     )

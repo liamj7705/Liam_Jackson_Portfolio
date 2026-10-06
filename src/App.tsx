@@ -6,6 +6,7 @@ import Education from './pages/Education'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import Services from './pages/Services'
+import Footer from './components/Footer'
 import './App.css'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+      <Footer />
     </>
   )
 }
