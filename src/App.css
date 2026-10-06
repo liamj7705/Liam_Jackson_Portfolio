@@ -17,6 +17,34 @@
   }
 }
 
+.navigation {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+
+  a {
+    color: var(--text-h);
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
 .hero {
   position: relative;
 
