@@ -1,0 +1,96 @@
+.services {
+  padding: 5rem 0;
+}
+
+.services h1 {
+  text-align: center;
+}
+
+.services-intro {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.service-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1.25rem;
+  border-radius: 12px;
+  background: var(--accent-bg);
+  font-size: 1.75rem;
+}
+
+.service-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.service-card p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.service-includes {
+  margin: 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--border);
+  list-style: none;
+}
+
+.service-includes li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.service-includes li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ---------- Call to action ---------- */
+.services-cta {
+  margin-top: 4rem;
+  padding: 3rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-alt);
+  text-align: center;
+}
+
+.services-cta h2 {
+  margin-bottom: 0.5rem;
+}
+
+.services-cta p {
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+}

@@ -1,0 +1,132 @@
+.education {
+  padding: 5rem 0;
+}
+
+.education h1 {
+  text-align: center;
+}
+
+.education-intro {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+/* ---------- Timeline ---------- */
+.timeline {
+  position: relative;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 0 0 2rem;
+  list-style: none;
+}
+
+/* the vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 7px;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* the dot on the line */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 1.75rem;
+  left: -2rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--accent);
+}
+
+.timeline-card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.timeline-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-years {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.status-badge {
+  padding: 0.2rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-badge.in-progress {
+  background: var(--accent-bg);
+  border-color: transparent;
+  color: var(--accent);
+}
+
+.timeline-card h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.35rem;
+}
+
+.timeline-institution {
+  margin: 0;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.timeline-highlights {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.timeline-highlights li {
+  margin-bottom: 0.35rem;
+}
+
+@media (max-width: 600px) {
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item::before {
+    left: -1.5rem;
+  }
+
+  .timeline::before {
+    left: 5px;
+  }
+}

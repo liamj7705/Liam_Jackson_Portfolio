@@ -1,0 +1,142 @@
+.contact {
+  padding: 5rem 0;
+}
+
+.contact h1 {
+  text-align: center;
+}
+
+.contact-intro {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ---------- Info card ---------- */
+.contact-card,
+.contact-form {
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.contact-card {
+  background: var(--bg-alt);
+}
+
+.contact-card h2,
+.contact-form h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.35rem;
+}
+
+.contact-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-card li {
+  margin-bottom: 1.25rem;
+}
+
+.contact-card li:last-child {
+  margin-bottom: 0;
+}
+
+.contact-label {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-card a {
+  color: var(--text-h);
+  text-decoration: none;
+  word-break: break-word;
+  transition: color 0.2s ease;
+}
+
+.contact-card a:hover {
+  color: var(--accent);
+}
+
+/* ---------- Form ---------- */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.form-field label {
+  margin-bottom: 0.4rem;
+  color: var(--text-h);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-field input,
+.form-field textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.contact-form .btn {
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.contact-form .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-status {
+  min-height: 1.5rem;
+  margin: 1rem 0 0;
+  font-weight: 500;
+}
+
+@media (max-width: 800px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
