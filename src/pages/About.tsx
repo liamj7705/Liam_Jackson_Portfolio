@@ -1,7 +1,7 @@
 import profilePhoto from '../assets/profile.jfif'
 import './About.css'
 
-const resumeURL = '${import.meta.env.BASE_URL}Liam_Jackson_Resume.pdf'
+const resumeURL = `${import.meta.env.BASE_URL}Liam_Jackson_Resume.pdf`
 
 function About() {
   return (
