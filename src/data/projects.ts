@@ -1,3 +1,6 @@
+import PaintProject from '../assets/jacksonspaint.jpg'
+import LandscapeProject from '../assets/nblandscape.jpg'
+
 export type Category = 'Client' | 'Personal' | 'School'
 
 export type Project = {
@@ -19,6 +22,7 @@ export const projects: Project[] = [
     description:
       'A website for a landscaping company that I built and continue to maintain. The owner can upload new project photos through a content management system, and visitors can send inquiries through a contact form.',
     tech: ['HTML', 'CSS', 'JavaScript', 'Formspree', 'Netlify'],
+    image: LandscapeProject,
     liveUrl: 'https://nblandscapeconstruction.com/',
   },
   {
@@ -28,6 +32,7 @@ export const projects: Project[] = [
     description:
       'The website for my own painting business, built from scratch. I also set up Google Search Console, a sitemap, and a Google Business Profile to improve local search visibility.',
     tech: ['HTML', 'CSS', 'JavaScript', 'SEO'],
+    image: PaintProject,
     liveUrl: 'https://jacksonspaint.com',
   },
   {
