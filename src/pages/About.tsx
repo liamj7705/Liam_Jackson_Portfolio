@@ -1,6 +1,8 @@
 import profilePhoto from '../assets/profile.jfif'
 import './About.css'
 
+const resumeURL = '${import.meta.env.BASE_URL}Liam_Jackson_Resume.pdf'
+
 function About() {
   return (
     <section className="about">
@@ -27,7 +29,7 @@ function About() {
 
           <div className="about-buttons">
             <a
-              href="/Liam_Jackson_Resume.pdf"
+              href={resumeURL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
@@ -35,7 +37,7 @@ function About() {
               View Resume (PDF)
             </a>
             <a
-              href="/Liam_Jackson_Resume.pdf"
+              href={resumeURL}
               download
               className="btn btn-outline"
             >
