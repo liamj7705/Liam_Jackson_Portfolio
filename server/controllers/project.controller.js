@@ -1,7 +1,12 @@
+/**
+ * Project controller.
+ * CRUD operations for portfolio projects.
+ */
 import Project from "../models/project.model.js";
 import extend from "lodash/extend.js";
-import errorHandler from "./error.controller.js";
+import errorHandler from "../helpers/dbErrorHandler.js";
 
+// Create a new project
 const create = async (req, res) => {
   const project = new Project(req.body);
   try {
@@ -14,6 +19,7 @@ const create = async (req, res) => {
   }
 };
 
+// Get all projects
 const list = async (req, res) => {
   try {
     let projects = await Project.find();
@@ -25,13 +31,15 @@ const list = async (req, res) => {
   }
 };
 
+// Param middleware: find a project by :projectId and attach it to req.project
 const projectByID = async (req, res, next, id) => {
   try {
     let project = await Project.findById(id);
-    if (!project)
+    if (!project) {
       return res.status(404).json({
         error: "Project not found",
       });
+    }
     req.project = project;
     next();
   } catch (err) {
@@ -41,10 +49,12 @@ const projectByID = async (req, res, next, id) => {
   }
 };
 
+// Return a single project
 const read = (req, res) => {
   return res.json(req.project);
 };
 
+// Update a project with the fields sent in the request body
 const update = async (req, res) => {
   try {
     let project = req.project;
@@ -58,6 +68,7 @@ const update = async (req, res) => {
   }
 };
 
+// Delete a single project
 const remove = async (req, res) => {
   try {
     let project = req.project;
@@ -70,6 +81,7 @@ const remove = async (req, res) => {
   }
 };
 
+// Delete every project
 const removeAll = async (req, res) => {
   try {
     const result = await Project.deleteMany({});

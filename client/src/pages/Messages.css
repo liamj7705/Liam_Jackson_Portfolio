@@ -1,0 +1,66 @@
+/* ==========================================================
+   Messages page (admin)
+   ========================================================== */
+
+.messages {
+  padding: 5rem 0;
+}
+
+.messages h1,
+.messages-intro {
+  text-align: center;
+}
+
+.messages-intro {
+  margin-bottom: 3rem;
+}
+
+.message-list {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ---------- Message card ---------- */
+.message-card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+/* Highlight unread messages */
+.message-card.unread {
+  border-left: 4px solid var(--accent);
+  background: var(--accent-bg);
+}
+
+.message-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.message-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.message-header time {
+  font-size: 0.85rem;
+}
+
+.message-body {
+  white-space: pre-wrap; /* Keep the sender's line breaks */
+}
+
+.message-actions {
+  display: flex;
+  gap: 0.75rem;
+}

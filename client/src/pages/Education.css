@@ -1,3 +1,7 @@
+/* ==========================================================
+   Education page
+   ========================================================== */
+
 .education {
   padding: 5rem 0;
 }
@@ -21,7 +25,7 @@
   list-style: none;
 }
 
-/* the vertical line */
+/* The vertical line */
 .timeline::before {
   content: '';
   position: absolute;
@@ -41,7 +45,7 @@
   margin-bottom: 0;
 }
 
-/* the dot on the line */
+/* The dot on the line */
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -54,6 +58,7 @@
   border: 3px solid var(--accent);
 }
 
+/* ---------- Timeline card ---------- */
 .timeline-card {
   padding: 1.5rem;
   border: 1px solid var(--border);
@@ -81,6 +86,7 @@
   font-weight: 700;
 }
 
+/* "Completed" / "In progress" badge */
 .status-badge {
   padding: 0.2rem 0.7rem;
   border: 1px solid var(--border);
@@ -117,6 +123,21 @@
   margin-bottom: 0.35rem;
 }
 
+/* ---------- Admin controls ---------- */
+.timeline-admin {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.education-actions {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Mobile ---------- */
 @media (max-width: 600px) {
   .timeline {
     padding-left: 1.5rem;

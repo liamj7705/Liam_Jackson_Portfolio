@@ -1,3 +1,8 @@
+/* ==========================================================
+   Global styles: colour variables, base elements, and shared buttons
+   ========================================================== */
+
+/* ---------- Colour variables (light mode) ---------- */
 :root {
   --text: #475569;
   --text-h: #0f172a;
@@ -27,6 +32,7 @@
   }
 }
 
+/* ---------- Dark mode colours ---------- */
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #94a3b8;
@@ -42,6 +48,7 @@
   }
 }
 
+/* ---------- Base elements ---------- */
 *,
 *::before,
 *::after {
@@ -130,4 +137,33 @@ img {
 .btn-outline:hover {
   background: var(--accent-bg);
   color: var(--accent);
+}
+
+/* ---------- Admin buttons (Edit / Delete) ---------- */
+.admin-btn {
+  padding: 0.35rem 0.9rem;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.admin-btn:hover {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.admin-btn-danger {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.admin-btn-danger:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
 }

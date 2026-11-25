@@ -1,3 +1,7 @@
+/**
+ * Services page.
+ * Lists the services I offer (from data/services.ts) and a call to action.
+ */
 import { Link } from 'react-router-dom'
 import { services } from '../data/services'
 import './Services.css'
@@ -12,6 +16,7 @@ function Services() {
           fast, and easy to manage. Here's what I can do for you.
         </p>
 
+        {/* ---------- Service cards ---------- */}
         <div className="service-grid">
           {services.map((service) => (
             <article key={service.id} className="service-card">
@@ -29,6 +34,7 @@ function Services() {
           ))}
         </div>
 
+        {/* ---------- Call to action ---------- */}
         <div className="services-cta">
           <h2>Have a project in mind?</h2>
           <p>Tell me what you need and I'll get back to you with next steps.</p>

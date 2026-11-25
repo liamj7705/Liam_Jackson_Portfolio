@@ -1,3 +1,7 @@
+/* ==========================================================
+   Navbar
+   ========================================================== */
+
 .navigation {
   display: flex;
   align-items: center;
@@ -7,6 +11,7 @@
   background: var(--bg);
 }
 
+/* ---------- Logo ---------- */
 .logo-link {
   display: flex;
   border-bottom: none !important;
@@ -23,8 +28,10 @@
   transform: scale(1.08);
 }
 
+/* ---------- Page links ---------- */
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -46,6 +53,55 @@
   border-bottom-color: var(--accent);
 }
 
+/* Account area, separated from the page links */
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 2rem;
+  border-left: 1px solid var(--border);
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.nav-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+/* Small outline button used for Sign Up and Sign Out */
+.nav-btn,
+.nav-links a.nav-btn {
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.nav-btn:hover,
+.nav-links a.nav-btn:hover {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+/* ---------- Mobile ---------- */
 @media (max-width: 700px) {
   .navigation {
     flex-direction: column;
@@ -56,5 +112,12 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+  }
+
+  .nav-auth {
+    padding-left: 0;
+    border-left: none;
+    width: 100%;
+    justify-content: center;
   }
 }

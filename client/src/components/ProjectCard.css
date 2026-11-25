@@ -1,3 +1,7 @@
+/* ==========================================================
+   Project card
+   ========================================================== */
+
 .project-card {
   display: flex;
   flex-direction: column;
@@ -14,6 +18,7 @@
   transform: translateY(-4px);
 }
 
+/* ---------- Image ---------- */
 .project-image {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -31,6 +36,7 @@
   font-weight: 700;
 }
 
+/* ---------- Card body ---------- */
 .project-body {
   display: flex;
   flex-direction: column;
@@ -61,6 +67,7 @@
   font-size: 0.95rem;
 }
 
+/* ---------- Tech tags ---------- */
 .project-tech {
   display: flex;
   flex-wrap: wrap;
@@ -78,6 +85,7 @@
   color: var(--text-h);
 }
 
+/* ---------- Links ---------- */
 .project-links {
   display: flex;
   gap: 1.25rem;
@@ -88,4 +96,13 @@
 .project-links a {
   font-weight: 600;
   text-decoration: none;
+}
+
+/* ---------- Admin controls ---------- */
+.project-admin {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
 }

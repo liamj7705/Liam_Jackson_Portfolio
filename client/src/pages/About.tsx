@@ -1,6 +1,11 @@
+/**
+ * About page.
+ * Profile photo, short bio, and links to view or download my resume.
+ */
 import profilePhoto from '../assets/profile.jfif'
 import './About.css'
 
+// The resume PDF lives in client/public, so build the path from the site's base URL
 const resumeURL = `${import.meta.env.BASE_URL}Liam_Jackson_Resume.pdf`
 
 function About() {
@@ -27,6 +32,7 @@ function About() {
             growing as a developer.
           </p>
 
+          {/* Resume buttons: open in a new tab, or download */}
           <div className="about-buttons">
             <a
               href={resumeURL}
@@ -36,11 +42,7 @@ function About() {
             >
               View Resume (PDF)
             </a>
-            <a
-              href={resumeURL}
-              download
-              className="btn btn-outline"
-            >
+            <a href={resumeURL} download className="btn btn-outline">
               Download
             </a>
           </div>

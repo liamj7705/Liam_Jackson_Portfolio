@@ -1,5 +1,10 @@
+/**
+ * User model.
+ * A user account. Passwords are never stored directly, only a salted hash.
+ */
 import mongoose from "mongoose";
 import crypto from "crypto";
+
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -12,6 +17,12 @@ const UserSchema = new mongoose.Schema({
     unique: "Email already exists",
     match: [/.+\@.+\..+/, "Please fill a valid email address"],
     required: "Email is required",
+  },
+  // "admin" can manage projects, qualifications, and messages
+  role: {
+    type: String,
+    default: "user",
+    enum: ["user", "admin"],
   },
   created: {
     type: Date,
@@ -27,16 +38,20 @@ const UserSchema = new mongoose.Schema({
   },
   salt: String,
 });
+
+// ---------- Virtual password field ----------
+// Setting user.password creates a new salt and stores the hashed password
 UserSchema.virtual("password")
   .set(function (password) {
     this._password = password;
     this.salt = this.makeSalt();
     this.hashed_password = this.encryptPassword(password);
-    //this.hashed_password = password;
   })
   .get(function () {
     return this._password;
   });
+
+// ---------- Password validation ----------
 UserSchema.path("hashed_password").validate(function (v) {
   if (this._password && this._password.length < 6) {
     this.invalidate("password", "Password must be at least 6 characters.");
@@ -46,25 +61,27 @@ UserSchema.path("hashed_password").validate(function (v) {
   }
 }, null);
 
+// ---------- Instance methods ----------
 UserSchema.methods = {
+  // Check whether a plain-text password matches the stored hash
   authenticate: function (plainText) {
     return this.encryptPassword(plainText) === this.hashed_password;
   },
+
+  // Hash a password using this user's salt
   encryptPassword: function (password) {
     if (!password) return "";
     try {
-      return crypto
-        .createHmac("sha1", this.salt)
-        .update(password)
-        .digest("hex");
+      return crypto.createHmac("sha1", this.salt).update(password).digest("hex");
     } catch (err) {
       return "";
     }
   },
+
+  // Generate a random salt
   makeSalt: function () {
     return Math.round(new Date().valueOf() * Math.random()) + "";
   },
 };
 
 export default mongoose.model("User", UserSchema);
-

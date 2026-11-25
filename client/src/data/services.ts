@@ -1,9 +1,13 @@
+/**
+ * Services shown on the Services page.
+ * Edit this list to add, remove, or change a service.
+ */
 export type Service = {
   id: string
-  icon: string
+  icon: string // An emoji shown in the card
   title: string
   description: string
-  includes: string[]
+  includes: string[] // Bullet points listing what's included
 }
 
 export const services: Service[] = [
@@ -37,16 +41,13 @@ export const services: Service[] = [
     title: 'Content Management & Contact Forms',
     description:
       'Tools that let you update your own site and let customers reach you easily.',
-    includes: [
-      'Working contact forms that email you inquiries',
-    ],
+    includes: ['Working contact forms that email you inquiries'],
   },
   {
     id: 'local-seo',
     icon: '🔎',
     title: 'Local SEO & Google Visibility',
-    description:
-      'Help local customers find your business when they search online.',
+    description: 'Help local customers find your business when they search online.',
     includes: [
       'Google Search Console and sitemap setup',
       'Google Business Profile setup',

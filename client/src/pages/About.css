@@ -1,7 +1,12 @@
+/* ==========================================================
+   About page
+   ========================================================== */
+
 .about {
   padding: 5rem 0;
 }
 
+/* Photo on the left, text on the right */
 .about-inner {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -36,6 +41,7 @@
   margin-top: 1.5rem;
 }
 
+/* ---------- Mobile: stack photo above text ---------- */
 @media (max-width: 800px) {
   .about-inner {
     grid-template-columns: 1fr;

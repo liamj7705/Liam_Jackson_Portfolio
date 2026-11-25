@@ -1,3 +1,8 @@
+/* ==========================================================
+   Contact page
+   (form styles are also reused by Sign In, Sign Up, and the admin forms)
+   ========================================================== */
+
 .contact {
   padding: 5rem 0;
 }
@@ -88,7 +93,8 @@
 }
 
 .form-field input,
-.form-field textarea {
+.form-field textarea,
+.form-field select {
   padding: 0.75rem 1rem;
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -109,6 +115,7 @@
   box-shadow: 0 0 0 3px var(--accent-bg);
 }
 
+/* Hidden field to catch spam bots */
 .honeypot {
   position: absolute;
   left: -9999px;
@@ -117,6 +124,7 @@
   opacity: 0;
 }
 
+/* ---------- Submit button and status ---------- */
 .contact-form .btn {
   cursor: pointer;
   font: inherit;
@@ -135,6 +143,7 @@
   font-weight: 500;
 }
 
+/* ---------- Mobile ---------- */
 @media (max-width: 800px) {
   .contact-layout {
     grid-template-columns: 1fr;

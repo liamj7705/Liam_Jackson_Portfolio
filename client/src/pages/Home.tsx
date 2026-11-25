@@ -1,6 +1,11 @@
+/**
+ * Home page.
+ * Hero introduction, mission statement, and cards linking to the other pages.
+ */
 import { Link } from 'react-router-dom'
 import './Home.css'
 
+// Cards shown in the "Explore my site" section
 const exploreLinks = [
   {
     to: '/about',
@@ -27,6 +32,7 @@ const exploreLinks = [
 function Home() {
   return (
     <>
+      {/* ---------- Hero ---------- */}
       <section className="hero">
         <div className="container">
           <span className="hero-eyebrow">Welcome to my portfolio</span>
@@ -51,6 +57,7 @@ function Home() {
         </div>
       </section>
 
+      {/* ---------- Mission ---------- */}
       <section className="mission">
         <div className="container">
           <h2>My Mission</h2>
@@ -62,6 +69,7 @@ function Home() {
         </div>
       </section>
 
+      {/* ---------- Explore cards ---------- */}
       <section className="explore">
         <div className="container">
           <h2>Explore my site</h2>

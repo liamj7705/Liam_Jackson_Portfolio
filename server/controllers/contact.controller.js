@@ -1,10 +1,19 @@
+/**
+ * Contact controller.
+ * CRUD operations for messages sent through the contact form.
+ */
 import Contact from "../models/contact.model.js";
 import extend from "lodash/extend.js";
-import errorHandler from "./error.controller.js";
+import errorHandler from "../helpers/dbErrorHandler.js";
 
+// Create a new message (public)
 const create = async (req, res) => {
-  const contact = new Contact(req.body);
+  // Don't let the sender set these fields; the schema defaults are used instead
+  delete req.body.read;
+  delete req.body.created;
+
   try {
+    const contact = new Contact(req.body);
     await contact.save();
     return res.status(201).json(contact);
   } catch (err) {
@@ -14,6 +23,7 @@ const create = async (req, res) => {
   }
 };
 
+// Get all messages
 const list = async (req, res) => {
   try {
     let contacts = await Contact.find();
@@ -25,13 +35,15 @@ const list = async (req, res) => {
   }
 };
 
+// Param middleware: find a message by :contactId and attach it to req.contact
 const contactByID = async (req, res, next, id) => {
   try {
     let contact = await Contact.findById(id);
-    if (!contact)
+    if (!contact) {
       return res.status(404).json({
         error: "Contact not found",
       });
+    }
     req.contact = contact;
     next();
   } catch (err) {
@@ -41,10 +53,12 @@ const contactByID = async (req, res, next, id) => {
   }
 };
 
+// Return a single message
 const read = (req, res) => {
   return res.json(req.contact);
 };
 
+// Update a message (e.g. mark it as read)
 const update = async (req, res) => {
   try {
     let contact = req.contact;
@@ -58,6 +72,7 @@ const update = async (req, res) => {
   }
 };
 
+// Delete a single message
 const remove = async (req, res) => {
   try {
     let contact = req.contact;
@@ -70,6 +85,7 @@ const remove = async (req, res) => {
   }
 };
 
+// Delete every message
 const removeAll = async (req, res) => {
   try {
     const result = await Contact.deleteMany({});

@@ -1,3 +1,7 @@
+/* ==========================================================
+   Projects page
+   ========================================================== */
+
 .projects {
   padding: 5rem 0;
 }
@@ -12,6 +16,7 @@
   text-align: center;
 }
 
+/* ---------- Category filter buttons ---------- */
 .filter-bar {
   display: flex;
   justify-content: center;
@@ -43,9 +48,9 @@
   color: #0f172a;
 }
 
+/* ---------- Project grid ---------- */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
-

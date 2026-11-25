@@ -1,17 +1,38 @@
-import mongoose from 'mongoose'
+/**
+ * Qualification model.
+ * An education entry shown on the Education page.
+ */
+import mongoose from "mongoose";
 
 const QualificationSchema = new mongoose.Schema({
-  title: { type: String, trim: true, required: 'Title is required' },
-  firstname: { type: String, trim: true, required: 'First name is required' },
-  lastname: { type: String, trim: true, required: 'Last name is required' },
-  email: {
+  title: {
     type: String,
     trim: true,
-    required: 'Email is required',
-    match: [/.+\@.+\..+/, 'Please enter a valid email address'],
+    required: "Title is required",
   },
-  completion: { type: Date },
-  description: { type: String, trim: true },
-})
+  institution: {
+    type: String,
+    trim: true,
+    required: "Institution is required",
+  },
+  // Years are optional
+  startYear: {
+    type: Number,
+    min: 1900,
+    max: 2100,
+  },
+  endYear: {
+    type: Number,
+    min: 1900,
+    max: 2100,
+  },
+  status: {
+    type: String,
+    required: "Status is required",
+    enum: ["Completed", "In progress"],
+  },
+  // Bullet points shown under the qualification
+  highlights: [String],
+});
 
-export default mongoose.model('Qualification', QualificationSchema)
+export default mongoose.model("Qualification", QualificationSchema);
